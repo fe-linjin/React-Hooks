@@ -1,26 +1,28 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect, useReducer, useContext } from 'react';
+
 import actions from '../action';
-import reducer from '../reducer/example';
+import { ExampleContext } from '../App';
 
-export default function Example() {
+const Example = () => {
 
-    const [reduxState, dispatch] = useReducer(reducer, {count: 0});
+    const exampleContext = useContext(ExampleContext);
 
     useEffect(() => {
-        window.document.title = `you click ${reduxState.count} times`;
-    }, [reduxState.count]);
+        window.document.title = `you click ${exampleContext.exampleState.count} times`;
+    }, [exampleContext.exampleState.count]);
+
     return (
         <div>
             <p>you can click it</p>
-            <button onClick={() => dispatch(actions.onChangeCount(reduxState.count))}>click it</button>
+            <button onClick={() => exampleContext.dispatch(actions.onChangeCount(exampleContext.exampleState.count))}>click it</button>
         </div>
     )
 }
 
+export default Example;
 
 
-
-/*
+/* s
 class Example extends Component{
 
 
