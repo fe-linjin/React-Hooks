@@ -1,7 +1,7 @@
-import React, { useEffect,  useContext } from 'react';
+import React, { useState, useEffect, useReducer, useContext } from 'react';
 
-import actions from '../action';
-import { ExampleContext } from '../App';
+import actions from '../../action';
+import { ExampleContext } from '../../App';
 
 const Example = () => {
 

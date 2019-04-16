@@ -1,10 +1,10 @@
 import * as Types from '../../types/types';
 
-const defaultState = {
+export const defaultState = {
     count: 0
 }
 
-export default (state = defaultState, action) => {
+export default (state, action) => {
     switch(action.type) {
         case Types.EXAMPLE_TEST:
             return {
